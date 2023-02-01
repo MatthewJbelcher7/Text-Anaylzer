@@ -1,0 +1,44 @@
+Describe: textArray()
+Test: Adds zoinks into a paragraph variable.
+Code: let paragraph = "zoinks";
+Output: paragraph = "zoinks";
+
+Test: Removes "," from elements in array.
+Code: let paragraph = "zoinks,";
+      paragraph.replaceAll(",", "");
+Output: "zoinks"
+
+Test: Defines an empty array
+Code: let array = [];
+Output: [];
+
+Test: Takes a word from an array and pushes it.
+Code: let paragraph = "zoinks";
+      let array = [];
+      array.push(paragraph);
+Output: ["zoinks"];
+
+Test: Puts individual words from desired paragraph into an array.
+Code: let paragraph = "zoinks, muppeteer, biffaroni, and loopdaloop";
+      let array = [];
+      array = paragraph.split(" ");
+Output: ["zoinks,", "muppeteer,", "biffaroni,", "and", "loopdaloop"]
+
+
+Describe: Removes "," "." "!" "?" from elements in array.
+Test:for (i = 0; i < array.length; i++ {
+        array[i].remove(",", "");
+      })
+Output:
+
+Describe: omitSwears()
+Test: "It should detect the word muppeteer."
+Output:
+
+Test:"It should detect the word zoinks, muppeteer, biffaroni, and loopdaloop"
+Code:
+Output:
+
+Describe:
+Test:
+Output:
