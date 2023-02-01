@@ -5,17 +5,22 @@ Output: paragraph = "zoinks";
 
 Test: Removes "," from elements in array.
 Code: let paragraph = "zoinks,";
-      paragraph.replaceAll(",", "");
+      paragraph = paragraph.replaceAll(",", "");
+Output: "zoinks"
+
+Test: Makes all letters lowercase in string.
+Code: let paragraph = "ZOINKS,";
+      paragraph = paragraph.replaceAll(",", "").toLowerCase();
 Output: "zoinks"
 
 Test: Defines an empty array
 Code: let array = [];
 Output: [];
 
-Test: Takes a word from an array and pushes it.
-Code: let paragraph = "zoinks";
+Test: Splits paragraph by spaces and puts each word into the array.
+Code: let paragraph = "zoinks ";
       let array = [];
-      array.push(paragraph);
+      array = array.split(" ");
 Output: ["zoinks"];
 
 Test: Puts individual words from desired paragraph into an array.
@@ -24,11 +29,8 @@ Code: let paragraph = "zoinks, muppeteer, biffaroni, and loopdaloop";
       array = paragraph.split(" ");
 Output: ["zoinks,", "muppeteer,", "biffaroni,", "and", "loopdaloop"]
 
-
-Describe: Removes "," "." "!" "?" from elements in array.
-Test:for (i = 0; i < array.length; i++ {
-        array[i].remove(",", "");
-      })
+Test: "Puts all letters to lowercase"
+Code:
 Output:
 
 Describe: omitSwears()
@@ -41,4 +43,5 @@ Output:
 
 Describe:
 Test:
+Code:
 Output:
