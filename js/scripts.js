@@ -19,7 +19,36 @@ function numberOfOccurrencesInText(word, text) {
     return 0;
   }
   const textArray = text.split(" ");
+  let wordOccurences = [];
+  let indexArray = [];
+  let combinedAns = [];
   let wordCount = 0;
+  let indexCount = 0;
+
+  textArray.forEach(function(element) {
+    if (wordOccurences.includes(element.toLowerCase())) {
+      return;
+    } else {
+      wordOccurences.push(element);
+    }
+  });
+
+  wordOccurences.forEach(function(element) {
+    textArray.forEach(function(element2) {
+      if (element === element2) {
+        indexCount++
+      }
+    });
+    indexArray.push(indexCount);
+    indexCount = 0;
+  });
+
+  for (i = 0; i < wordOccurences.length; i++) {
+    combinedAns.push(wordOccurences[i] + ": " + indexArray[i]);
+  }
+  combinedAns.sort()
+  console.log(combinedAns.reverse());
+
   textArray.forEach(function(element) {
     if (element.toLowerCase() === word.toLowerCase()) {
       wordCount++;
@@ -60,3 +89,4 @@ function handleFormSubmission() {
 window.addEventListener("load", function() {
   document.querySelector("form#word-counter").addEventListener("submit", handleFormSubmission);
 });
+
